@@ -1,0 +1,21 @@
+# Local environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Datasets (drop the Kaggle Titanic train.csv / test.csv into Data/ locally)
+Data/*.csv
+
+# Generated artifacts
+submission.csv
+
+# Notebooks (not part of the repo)
+notebooks/
