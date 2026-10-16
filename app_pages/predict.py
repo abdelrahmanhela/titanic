@@ -10,9 +10,9 @@ from utils.model import (
 )
 from utils.pipeline import run_test_pipeline
 
-st.title("Test-set predictions", icon=":material/upload:")
+st.title("Foretell their fate", icon=":material/upload:")
 st.caption(
-    "The pipeline replays **every training transformation** on the test data — "
+    "The pipeline replays **every training transformation** on the test manifest — "
     "the train-fitted Age imputation, the class dummies, the Sex encoding — then "
     "trains on the full training set and predicts `Survived` for each passenger."
 )
@@ -49,17 +49,16 @@ with st.spinner("Running the test pipeline..."):
 
 submission = result["submission"]
 
-# --- Pipeline steps ----------------------------------------------------------
-with st.container(border=True):
-    st.subheader("Pipeline steps", icon=":material/steps:")
-    st.markdown(
-        f"""
-1. **Fit on train** — Age mean `= {result['params']['age_mean']:.2f}` recorded from the training set.
-2. **Transform** — the same `build_features` transform applied to train *and* test (imputation, class dummies, Sex encoding).
-3. **Train** — `{model_name}` fitted on the **full** training set ({len(train_df):,} rows).
-4. **Predict** — `Survived` predicted for each of the {result['n_passengers']:,} test passengers.
+# --- The voyage (pipeline steps) ---------------------------------------------
+st.subheader("The voyage", icon=":material/steps:")
+st.markdown(
+    f"""
+1. **Fit on train** — Age mean `= {result['params']['age_mean']:.2f}` recorded from the training manifest.
+2. **Transform** — the same `build_features` transform applied to train *and* test.
+3. **Train** — `{model_name}` fitted on the full training set ({len(train_df):,} rows).
+4. **Predict** — `Survived` foretold for each of the {result['n_passengers']:,} test passengers.
 """
-    )
+)
 
 k1, k2, k3 = st.columns(3)
 k1.metric("Predicted survivors", f"{int(submission['Survived'].sum()):,}",
@@ -70,7 +69,7 @@ k3.metric("Train accuracy (resubstitution)", f"{result['train_accuracy']:.4f}",
           border=True, height="stretch")
 
 # --- Submission --------------------------------------------------------------
-st.subheader("Submission", icon=":material/download:")
+st.subheader("Manifest of fates", icon=":material/download:")
 st.dataframe(submission.head(20), width="stretch", hide_index=True,
              alt="First 20 rows of the submission file")
 st.download_button(

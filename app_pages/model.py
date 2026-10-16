@@ -12,8 +12,8 @@ from utils.model import (
 )
 from utils.plots import confusion_matrix_fig, roc_curve_fig
 
-st.title("Survival prediction model", icon=":material/model_training:")
-st.caption("Train a classifier on the feature matrix and review its evaluation metrics.")
+st.title("The forecaster", icon=":material/model_training:")
+st.caption("A classifier reads seven traits of each passenger and guesses their fate.")
 
 _, _, X, y = load_train()
 
@@ -42,17 +42,20 @@ res = train_and_evaluate(
     X, y, model_name, test_size, int(random_state), n_estimators, max_depth, max_iter
 )
 
-# --- Results -----------------------------------------------------------------
+# --- Scoreboard ----------------------------------------------------------------
+st.subheader("Scoreboard", icon=":material/trophy:")
 st.caption(
-    f"{model_name} · test size {test_size:.0%} · random state {int(random_state)}"
+    f"{model_name} · {test_size:.0%} held out · seed {int(random_state)}"
 )
 
 k1, k2, k3 = st.columns(3)
 k1.metric("Accuracy", f"{res['accuracy']:.4f}", border=True, height="stretch")
 k2.metric("ROC AUC", f"{res['roc_auc']:.4f}", border=True, height="stretch")
-k3.metric("Test rows", f"{res['shapes']['X_test'][0]:,}", border=True, height="stretch")
+k3.metric("Held-out passengers", f"{res['shapes']['X_test'][0]:,}",
+          border=True, height="stretch")
 
-st.subheader("Evaluation", icon=":material/insights:")
+# --- Errors --------------------------------------------------------------------
+st.subheader("Where it errs", icon=":material/crisis_alert:")
 c1, c2 = st.columns(2)
 c1.plotly_chart(
     confusion_matrix_fig(res["y_test"], res["y_pred"]),
@@ -91,6 +94,6 @@ with st.container(border=True):
         st.metric("Rows", f"{res['shapes']['X_test'][0]:,}")
         st.caption(_split_caption(res["test_dist"]))
 
-st.subheader("Feature importance", icon=":material/bar_chart:")
+st.subheader("What the model weighs", icon=":material/bar_chart:")
 imp = pd.Series(res["importance"], index=res["feature_names"]).sort_values()
 st.bar_chart(imp, horizontal=True)

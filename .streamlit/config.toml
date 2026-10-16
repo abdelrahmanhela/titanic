@@ -1,81 +1,82 @@
-# Dual light/dark theme — the settings appearance toggle stays available.
-# Adapted from the shadcn-dual template shipped with the
-# developing-with-streamlit skill (no custom CSS; theme tokens only).
+# Titanic Explorer theme — "ocean liner": warm ivory paper / deep ship-navy,
+# brass hardware accents, Playfair Display serif headings.
+# Dual light/dark; the settings appearance toggle stays available.
 
 [theme]
-showWidgetBorder = true
+showWidgetBorder = false
 showSidebarBorder = true
-baseRadius = "6px"
-buttonRadius = "6px"
-font = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
-codeFontSize = "0.875rem"
-baseFontSize = 14
+baseRadius = "10px"
+buttonRadius = "8px"
+font = "'Source Sans 3':https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+headingFont = "'Playfair Display':https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap"
+codeFont = "'IBM Plex Mono':https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+codeFontSize = "0.85rem"
+baseFontSize = 15
 baseFontWeight = 400
-headingFontSizes = ["36px", "30px", "24px", "20px", "16px", "14px"]
-headingFontWeights = [600, 600, 600, 600, 600, 600]
+headingFontSizes = ["40px", "30px", "24px", "19px", "16px", "14px"]
+headingFontWeights = [700, 700, 600, 600, 600, 600]
 linkUnderline = true
 
 [theme.light]
-primaryColor = "#2563EB"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#FAFAFA"
-codeBackgroundColor = "#F4F4F5"
-textColor = "#09090B"
-linkColor = "#2563EB"
-borderColor = "#E4E4E7"
-codeTextColor = "#18181B"
-grayColor = "#71717A"
-blueColor = "#3B82F6"
-greenColor = "#22C55E"
-redColor = "#EF4444"
-yellowColor = "#EAB308"
-orangeColor = "#F97316"
-violetColor = "#8B5CF6"
-# Churn series: "No" first (blue), "Yes" second (red)
-chartCategoricalColors = ["#3B82F6", "#EF4444", "#22C55E", "#8B5CF6", "#F97316", "#71717A", "#EAB308"]
-dataframeBorderColor = "#E4E4E7"
-dataframeHeaderBackgroundColor = "#FAFAFA"
+primaryColor = "#8A5A2B"
+backgroundColor = "#FAF6EF"
+secondaryBackgroundColor = "#F1E9DA"
+codeBackgroundColor = "#EFE6D5"
+textColor = "#22303F"
+linkColor = "#8A5A2B"
+borderColor = "#E0D3BC"
+codeTextColor = "#3B2E1E"
+grayColor = "#7A6A55"
+blueColor = "#2F5D62"
+greenColor = "#4A7C59"
+redColor = "#A63A2B"
+yellowColor = "#C08A2E"
+orangeColor = "#B4652A"
+violetColor = "#6D5A8D"
+# Life-buoy palette: navy, brass, sea green, crimson, slate, sand
+chartCategoricalColors = ["#22415C", "#B08247", "#4A7C59", "#A63A2B", "#5E7A8C", "#C9B48C"]
+dataframeBorderColor = "#E0D3BC"
+dataframeHeaderBackgroundColor = "#F1E9DA"
 
 [theme.dark]
-primaryColor = "#3B82F6"
-backgroundColor = "#09090B"
-secondaryBackgroundColor = "#18181B"
-codeBackgroundColor = "#27272A"
-textColor = "#FAFAFA"
-linkColor = "#E4E4E7"
-borderColor = "#27272A"
-codeTextColor = "#E4E4E7"
-grayColor = "#A1A1AA"
-blueColor = "#60A5FA"
-greenColor = "#4ADE80"
-redColor = "#F87171"
-yellowColor = "#FACC15"
-orangeColor = "#FB923C"
-violetColor = "#A78BFA"
-chartCategoricalColors = ["#60A5FA", "#F87171", "#4ADE80", "#A78BFA", "#FB923C", "#A1A1AA", "#FACC15"]
-dataframeBorderColor = "#27272A"
-dataframeHeaderBackgroundColor = "#18181B"
-dataframeHeaderTextColor = "#FAFAFA"
+primaryColor = "#D4A94E"
+backgroundColor = "#101A26"
+secondaryBackgroundColor = "#17232F"
+codeBackgroundColor = "#1E2C3A"
+textColor = "#E9DFCB"
+linkColor = "#D4A94E"
+borderColor = "#2A3A4A"
+codeTextColor = "#E9DFCB"
+grayColor = "#93A1B0"
+blueColor = "#6FA8C7"
+greenColor = "#7FB08A"
+redColor = "#D97A66"
+yellowColor = "#E5C06B"
+orangeColor = "#D08A4E"
+violetColor = "#A996C9"
+chartCategoricalColors = ["#6FA8C7", "#D4A94E", "#7FB08A", "#D97A66", "#9DB4C4", "#C9B48C"]
+dataframeBorderColor = "#2A3A4A"
+dataframeHeaderBackgroundColor = "#17232F"
+dataframeHeaderTextColor = "#E9DFCB"
 
 [theme.light.sidebar]
-backgroundColor = "#FAFAFA"
-secondaryBackgroundColor = "#F4F4F5"
-codeBackgroundColor = "#E4E4E7"
-textColor = "#09090B"
-borderColor = "#E4E4E7"
-primaryColor = "#2563EB"
-linkColor = "#2563EB"
-dataframeHeaderBackgroundColor = "#F4F4F5"
-dataframeBorderColor = "#E4E4E7"
+backgroundColor = "#F1E9DA"
+secondaryBackgroundColor = "#E9DFCB"
+codeBackgroundColor = "#EFE6D5"
+textColor = "#22303F"
+borderColor = "#E0D3BC"
+primaryColor = "#8A5A2B"
+linkColor = "#8A5A2B"
+dataframeHeaderBackgroundColor = "#E9DFCB"
+dataframeBorderColor = "#E0D3BC"
 
 [theme.dark.sidebar]
-backgroundColor = "#000000"
-secondaryBackgroundColor = "#18181B"
-codeBackgroundColor = "#27272A"
-textColor = "#FAFAFA"
-borderColor = "#27272A"
-primaryColor = "#3B82F6"
-linkColor = "#E4E4E7"
-dataframeHeaderBackgroundColor = "#18181B"
-dataframeBorderColor = "#27272A"
+backgroundColor = "#0B141D"
+secondaryBackgroundColor = "#17232F"
+codeBackgroundColor = "#1E2C3A"
+textColor = "#E9DFCB"
+borderColor = "#2A3A4A"
+primaryColor = "#D4A94E"
+linkColor = "#D4A94E"
+dataframeHeaderBackgroundColor = "#17232F"
+dataframeBorderColor = "#2A3A4A"

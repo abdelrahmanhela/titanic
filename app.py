@@ -13,9 +13,9 @@ st.set_page_config(
 pages = [
     st.Page("app_pages/overview.py", title="Overview", icon=":material/home:"),
     st.Page("app_pages/data_prep.py", title="Data prep", icon=":material/filter_alt:"),
-    st.Page("app_pages/eda.py", title="EDA", icon=":material/query_stats:"),
+    st.Page("app_pages/eda.py", title="Survival patterns", icon=":material/query_stats:"),
     st.Page("app_pages/model.py", title="Model", icon=":material/model_training:"),
-    st.Page("app_pages/predict.py", title="Predict (test)", icon=":material/upload:"),
+    st.Page("app_pages/predict.py", title="Predict", icon=":material/upload:"),
 ]
 
 pg = st.navigation(pages)
