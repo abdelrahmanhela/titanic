@@ -6,7 +6,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Titanic Explorer",
-    page_icon=":material-directions_boat:",
+    page_icon=":material/directions_boat:",
     layout="wide",
 )
 
