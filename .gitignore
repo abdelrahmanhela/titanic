@@ -12,7 +12,6 @@ __pycache__/
 .streamlit/secrets.toml
 
 # Datasets (drop the Kaggle Titanic train.csv / test.csv into Data/ locally)
-Data/*.csv
 
 # Generated artifacts
 submission.csv
